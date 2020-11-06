@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# rubocop:disable Metrics/BlockLength
 system('clear')
 loop do
   puts "-------------------- Welcome --------------------\n------------------ Tic-Tac-Toe ------------------\n\n"
@@ -56,3 +57,4 @@ loop do
   decision = gets.chomp.upcase
   break if decision == 'N'
 end
+# rubocop:enable Metrics/BlockLength
