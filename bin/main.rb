@@ -19,7 +19,7 @@ loop do
     puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}\n---+---+---\n #{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
     puts "---+---+---\n #{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}\n\n\n"
     # Get play from player function here
-    print "#{player[0]}\'s turn. Enter <row_number,col_number>\nPlay: "
+    print "#{player[0]}\'s turn. Enter <row_number,col_number> (1-3)\nPlay: "
     play = gets.chomp
     row = play[0].to_i
     col = play[2].to_i
@@ -44,7 +44,6 @@ loop do
         end
       end
     end
-    player = player == playerx ? playero : playerx
     # Validate win lose or draw function here
     if play == '3,3'
       puts "\n\n==============================\n--------- #{player[0]} won -----------\n=============================="
@@ -52,6 +51,7 @@ loop do
       game_over = true
     end
     break if game_over
+    player = player == playerx ? playero : playerx
   end
   puts "\n\nWanna play again? <n> to decline"
   decision = gets.chomp.upcase
