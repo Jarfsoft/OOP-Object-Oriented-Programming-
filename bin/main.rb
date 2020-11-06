@@ -50,8 +50,8 @@ loop do
       sleep(1)
       game_over = true
     end
-    break if game_over
     player = player == playerx ? playero : playerx
+    break if game_over
   end
   puts "\n\nWanna play again? <n> to decline"
   decision = gets.chomp.upcase
