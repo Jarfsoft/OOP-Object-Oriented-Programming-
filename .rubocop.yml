@@ -4,6 +4,14 @@ AllCops:
     - "Rakefile"
 
   DisplayCopNames: true
+  NewCops: enable
+
+Lint/EmptyBlock:
+  Enabled: false
+Lint/ToEnumArguments:
+  Enabled: false
+Lint/UnmodifiedReduceAccumulator:
+  Enabled: false
 
 Layout/LineLength:
   Max: 120
@@ -15,7 +23,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
-  Max: 30
+  Max: 50
 
 
 Style/Documentation:
@@ -30,6 +38,13 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/ArgumentsForwarding:
+  Enabled: false
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false
+Style/SwapValues:
+  Enabled: false
+
 
 Layout/HashAlignment:
   EnforcedColonStyle: key

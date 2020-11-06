@@ -1,34 +1,55 @@
 #!/usr/bin/env ruby
-puts 'Hello, world!'
+system('clear')
 loop do
   puts "-------------------- Welcome --------------------\n------------------ Tic-Tac-Toe ------------------\n\n"
   print 'X Player\'s name: '
   name1 = gets.chomp
+  print 'O Player\'s name: '
+  name2 = gets.chomp
+  playerx = [name1, 'X']
+  playero = [name2, 'O']
+  player = playerx
   # Create Player class
   grid = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
   game_over = false
   loop do
+    system('clear')
     # Print board function here
-    puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}\n---+---+---\n#{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
-    puts "---+---+---\n#{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}"
+    puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}\n---+---+---\n #{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
+    puts "---+---+---\n #{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}\n\n\n"
     # Get play from player function here
-    print "#{name1}\'s turn. Enter <row_number,col_number>\nPlay: "
+    print "#{player[0]}\'s turn. Enter <row_number,col_number>\nPlay: "
     play = gets.chomp
     row = play[0].to_i
     col = play[2].to_i
     row -= 1
     col -= 1
     if row < -1 || row > 3 || col < -1 || col > 3
-      puts "================================\n----------- Invalid entry -------------\n================================"
+      puts "\n\n===============================\n------- Invalid entry ---------\n==============================="
+      sleep(1)
       next
     end
     # Validate move function here
     (0..2).each do |i|
       (0..2).each do |j|
-        grid[i][j] = 'X' if i == row && j == col && (grid[i][j]).to_s == ' '
+        if i == row && j == col
+          if (grid[i][j]).to_s == ' '
+            grid[i][j] = player[1]
+          else
+            puts "\n\n===============================\n-------- Space taken ----------\n==============================="
+            sleep(1)
+            player = player == playerx ? playero : playerx
+          end
+        end
       end
     end
+    player = player == playerx ? playero : playerx
     # Validate win lose or draw function here
+    if play == '3,3'
+      puts "\n\n==============================\n--------- #{player[0]} won -----------\n=============================="
+      sleep(1)
+      game_over = true
+    end
     break if game_over
   end
   puts "\n\nWanna play again? <n> to decline"
