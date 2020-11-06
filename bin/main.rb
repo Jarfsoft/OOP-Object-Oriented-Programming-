@@ -23,13 +23,13 @@ loop do
     play = gets.chomp
     row = play[0].to_i
     col = play[2].to_i
-    row -= 1
-    col -= 1
-    if row < -1 || row > 3 || col < -1 || col > 3
+    unless row.positive? && row < 4 && col.positive? && col < 4
       puts "\n\n===============================\n------- Invalid entry ---------\n==============================="
       sleep(1)
       next
     end
+    row -= 1
+    col -= 1
     # Validate move function here
     (0..2).each do |i|
       (0..2).each do |j|
