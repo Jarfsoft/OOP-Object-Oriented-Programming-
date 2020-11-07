@@ -32,11 +32,13 @@ Then run the command below
 
 1. This is played on a board that has grid with spaces of 3 x 3.
 
-2. One player is X, the other is O, they take turns marking an available space with their respctive symbol.
+2. One player is X, the other is O, they take turns marking on an available space with their respctive symbol.
 
-3. The first player that marks 3 spaces in a row, column or diagonal will win.
+3. To make your move, you should enter a number from 1 to 3 to select the row in which the space you wish to mark is located, followed by any character (such as space, a coma, ect) and then another number for the column.
 
-4. If the 9 spaces gets occupied and there is no winner yet, the game finish with a draw.
+4. The first player that marks 3 spaces in a row, column or diagonal will win.
+
+5. If the 9 spaces gets occupied and there is no winner yet, the game finish with a draw.
 
 ## Live Demo
 
