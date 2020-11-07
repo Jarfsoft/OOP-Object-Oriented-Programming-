@@ -1,52 +1,48 @@
 #!/usr/bin/env ruby
 # rubocop:disable Metrics/BlockLength
-system('clear')
+
+require_relative '../lib/game'
+require_relative '../lib/player'
 loop do
+  system('clear')
   puts "-------------------- Welcome --------------------\n------------------ Tic-Tac-Toe ------------------\n\n"
   print 'X Player\'s name: '
-  name1 = gets.chomp
+  name = gets.chomp
+  playerx = Player.new(name, 'X')
   print 'O Player\'s name: '
-  name2 = gets.chomp
-  playerx = [name1, 'X']
-  playero = [name2, 'O']
+  name = gets.chomp
+  playero = Player.new(name, 'O')
   player = playerx
-  # Create Player class
-  grid = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+  game = Game.new
   game_over = false
   loop do
     system('clear')
-    # Print board function here
-    puts " #{grid[0][0]} | #{grid[0][1]} | #{grid[0][2]}\n---+---+---\n #{grid[1][0]} | #{grid[1][1]} | #{grid[1][2]}"
-    puts "---+---+---\n #{grid[2][0]} | #{grid[2][1]} | #{grid[2][2]}\n\n\n"
-    # Get play from player function here
-    print "#{player[0]}\'s turn. Enter <row_number,col_number> (1-3)\nPlay: "
+
+    puts game.print_grid
+
+    print "#{player.name}\'s turn. Enter <row_number,col_number> (1-3)\nPlay: "
     play = gets.chomp
     row = play[0].to_i
     col = play[2].to_i
-    unless row.positive? && row < 4 && col.positive? && col < 4
-      puts "\n\n===============================\n------- Invalid entry ---------\n==============================="
+
+    message = game.validate_move(row, col, player.symbol)
+    if message != ''
+      player = player == playerx ? playero : playerx
+    end
+    puts message
+    sleep(1)
+
+    if game.finish_draw
+      system('clear')
+      puts game.print_grid
+      puts "\n\n==============================\n----------- Draw -------------\n=============================="
       sleep(1)
-      next
+      game_over = true
     end
-    row -= 1
-    col -= 1
-    # Validate move function here
-    (0..2).each do |i|
-      (0..2).each do |j|
-        if i == row && j == col
-          if (grid[i][j]).to_s == ' '
-            grid[i][j] = player[1]
-          else
-            puts "\n\n===============================\n-------- Space taken ----------\n==============================="
-            sleep(1)
-            player = player == playerx ? playero : playerx
-          end
-        end
-      end
-    end
-    # Validate win lose or draw function here
-    if play == '3,3'
-      puts "\n\n==============================\n--------- #{player[0]} won -----------\n=============================="
+    if game.finish_win(player.symbol)
+      system('clear')
+      puts game.print_grid
+      puts "\n\n==============================\n-------- #{player.name} won ----------\n=============================="
       sleep(1)
       game_over = true
     end
