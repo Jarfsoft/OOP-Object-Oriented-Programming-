@@ -41,7 +41,7 @@ class Game
       return true if a == 3 || b == 3
     end
     return true if @grid[0][0] == symbol && @grid[1][1] == symbol && @grid[2][2] == symbol
-    return true if @grid[2][0] == symbol && @grid[1][2] == symbol && @grid[0][2] == symbol
+    return true if @grid[2][0] == symbol && @grid[1][1] == symbol && @grid[0][2] == symbol
 
     false
   end
