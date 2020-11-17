@@ -9,6 +9,7 @@
 ## Built With
 
 - Ruby
+- Rspec
 
 ## Getting started
 # In order to run the project locally follow all steps below:
@@ -40,6 +41,10 @@ Then run the command below
 
 5. If the 9 spaces gets occupied and there is no winner yet, the game finish with a draw.
 
+## Testing
+- run `rubocop -A` to find linter errors and fix them
+- run `rspec` in the root directory to run spec tests
+
 ## Live Demo
 
 [Live Demo Link](https://repl.it/@JuanAndrsAndrs7/WhirlwindRoyalblueConfig#main.rb)
@@ -52,11 +57,11 @@ Then run the command below
 - Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
 - LinkedIn: [Juan Andres Raudales Flores](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
 
-**Kanhai**
+👤 **K**
 
-- GitHub: [@Jarfsoft](https://github.com/Jarfsoft)
-- Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
-- LinkedIn: [Juan Andres Raudales Flores](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
+- GitHub: [@harshdeepkanhai](https://github.com/harshdeepkanhai)
+- Twitter: [@harshdeepkanhai](https://twitter.com/harshdeepkanhai)
+- LinkedIn: [harshdeepkanhai](https://linkedin.com/in/harshdeepkanhai)
 
 ## Acknowledgements
 - Ruby creators
