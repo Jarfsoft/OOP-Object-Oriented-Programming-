@@ -41,6 +41,9 @@ Then run the command below
 
 5. If the 9 spaces gets occupied and there is no winner yet, the game finish with a draw.
 
+## Install
+- Install rspec gem
+
 ## Testing
 - run `rubocop -A` to find linter errors and fix them
 - run `rspec` in the root directory to run spec tests
