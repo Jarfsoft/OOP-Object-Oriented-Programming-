@@ -52,6 +52,12 @@ Then run the command below
 - Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
 - LinkedIn: [Juan Andres Raudales Flores](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
 
+**Kanhai**
+
+- GitHub: [@Jarfsoft](https://github.com/Jarfsoft)
+- Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
+- LinkedIn: [Juan Andres Raudales Flores](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
+
 ## Acknowledgements
 - Ruby creators
 
